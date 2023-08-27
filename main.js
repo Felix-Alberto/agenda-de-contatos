@@ -11,12 +11,21 @@ const handlePhone = (event) => {
     return value
   }
 const form = document.getElementById('form-atividades');
+const atividade = [];
+const telefone = [];
+
 linhas = ''
 form.addEventListener('submit', function(e){
     e.preventDefault();
 
     const inputNomeContato = document.getElementById('nome-contato')
     const inputNumeroTelefone = document.getElementById('numero-telefone')
+
+    if(atividade.includes(inputNomeContato.value)){
+        alert(`O contato: ${inputNomeContato.value} já foi inserido(a)`);
+    } else{
+        atividade.push(inputNomeContato.value);
+        telefone.push(parseInt(inputNumeroTelefone.value));
 
     let linha = '<tr>';
     linha += `<td>${inputNomeContato.value}</td>`;
@@ -26,7 +35,7 @@ form.addEventListener('submit', function(e){
     linhas += linha
     const corpoTabela = document.querySelector('tbody')
     corpoTabela.innerHTML = linhas;
-
+}
     inputNomeContato.value = ''
     inputNumeroTelefone.value = ''
 
