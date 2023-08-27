@@ -13,9 +13,9 @@
             <img src="./imagens/emoji-agenda.png" alt="Emoji a segurando uma agenda">
             <h1>Agenda de contatos</h1>
         </header>
-        <form>
-            <input type="text" required placeholder="Nome do contato"/>
-            <input type="text"  required placeholder="(99) 9999-9999"/>
+        <form id="form-atividades">
+            <input type="text" required placeholder="Nome do contato" id="nome-contato" />
+            <input type="tel" maxlength="15" onkeyup="handlePhone(event)" required placeholder="(99) 9999-9999" id="numero-telefone" min="15" max="16"/>
             <button type="submit">Adicionar</button>
         </form>
         <table cellspacing="0">
@@ -23,15 +23,11 @@
                 <tr>
                     <th>Nome do contato</th>
                     <th>Número</th>
-                    <th>Telefone</th>
+                    
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Nome do contato</td>
-                    <td>Número</td>
-                    <td>Telefone</td>
-                </tr>
+               
             </tbody>
             <tfoot>
                 
